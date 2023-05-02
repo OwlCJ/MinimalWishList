@@ -7,9 +7,8 @@
 
 import Foundation
 
-struct Wish {
+struct Wish: Identifiable, Codable{
     var id: UUID = UUID()
     var text: String
     var date: Date
-    
 }

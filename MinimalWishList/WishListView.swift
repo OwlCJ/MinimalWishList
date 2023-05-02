@@ -2,27 +2,46 @@
 import SwiftUI
 
 struct WishListView: View {
+    @StateObject var vm: WishListViewModel
+    
     var body: some View {
         NavigationView {
-            ScrollView {
-                WishListViewRow()
+            VStack {
+                ScrollView {
+                    ForEach(0..<15) { _ in
+                            WishListViewRow()
+                    }
+                }
+                HStack {
+                    Button {
+                        print("----> Add Button Clicked")
+                    } label: {
+                        Image(systemName: "plus")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.black)
+                            .frame(width: 25)
+                    }
+                }
             }
             .navigationTitle("WishList")
-            .font(.system(size: 48, design: .serif))
+            .padding(.top, 20)
         }
-        
+        .onAppear {
+            UINavigationBar.appearance().largeTitleTextAttributes =
+                       [.font: UIFont(descriptor:
+                               UIFontDescriptor.preferredFontDescriptor(withTextStyle: .largeTitle)
+                        .withDesign(.serif)!
+                        .withSymbolicTraits(.traitBold)!,
+                        size: 38)
+                       ]
+            vm.fetch()
+        }
     }
-    
-//    init() {
-//        UINavigationBar.appearance().largeTitleTextAttributes =
-//           [.font: UIFont(descriptor:
-//                   UIFontDescriptor.preferredFontDescriptor(withTextStyle: .largeTitle)
-//                   .withDesign(.serif)!, size: 48)]
-//    }
 }
 
 struct WishListView_Previews: PreviewProvider {
     static var previews: some View {
-        WishListView()
+        WishListView(vm: WishListViewModel(storage: WishListStorage()))
     }
 }

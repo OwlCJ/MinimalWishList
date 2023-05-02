@@ -11,7 +11,7 @@ import SwiftUI
 struct MinimalWishListApp: App {
     var body: some Scene {
         WindowGroup {
-            WishListView()
+            WishListView(vm: WishListViewModel(storage: WishListStorage()))
         }
     }
 }
