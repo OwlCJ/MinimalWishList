@@ -20,6 +20,13 @@
 		71A597C329F9D36E000374AD /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A597C229F9D36E000374AD /* Storage.swift */; };
 		71C6791B2A005157003BFD00 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6791A2A005157003BFD00 /* WishListViewModel.swift */; };
 		71C6791D2A0056D0003BFD00 /* WishListStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6791C2A0056D0003BFD00 /* WishListStorage.swift */; };
+		71C679212A00C3A1003BFD00 /* NewYork.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C6791F2A00C3A1003BFD00 /* NewYork.ttf */; };
+		71C679222A00C3A1003BFD00 /* NewYorkItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C679202A00C3A1003BFD00 /* NewYorkItalic.ttf */; };
+		71C6792C2A015F7F003BFD00 /* NanumSquareNeo-eHv.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C679272A015F7F003BFD00 /* NanumSquareNeo-eHv.ttf */; };
+		71C6792D2A015F7F003BFD00 /* NanumSquareNeo-bRg.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C679282A015F7F003BFD00 /* NanumSquareNeo-bRg.ttf */; };
+		71C6792E2A015F7F003BFD00 /* NanumSquareNeo-aLt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C679292A015F7F003BFD00 /* NanumSquareNeo-aLt.ttf */; };
+		71C6792F2A015F7F003BFD00 /* NanumSquareNeo-dEb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C6792A2A015F7F003BFD00 /* NanumSquareNeo-dEb.ttf */; };
+		71C679302A015F7F003BFD00 /* NanumSquareNeo-cBd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C6792B2A015F7F003BFD00 /* NanumSquareNeo-cBd.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +63,14 @@
 		71A597C229F9D36E000374AD /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		71C6791A2A005157003BFD00 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 		71C6791C2A0056D0003BFD00 /* WishListStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListStorage.swift; sourceTree = "<group>"; };
+		71C6791F2A00C3A1003BFD00 /* NewYork.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NewYork.ttf; path = ../../../../../../Library/Fonts/NewYork.ttf; sourceTree = "<group>"; };
+		71C679202A00C3A1003BFD00 /* NewYorkItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NewYorkItalic.ttf; path = ../../../../../../Library/Fonts/NewYorkItalic.ttf; sourceTree = "<group>"; };
+		71C679232A00C8B8003BFD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		71C679272A015F7F003BFD00 /* NanumSquareNeo-eHv.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NanumSquareNeo-eHv.ttf"; path = "../../../../Library/Fonts/NanumSquareNeo-eHv.ttf"; sourceTree = "<group>"; };
+		71C679282A015F7F003BFD00 /* NanumSquareNeo-bRg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NanumSquareNeo-bRg.ttf"; path = "../../../../Library/Fonts/NanumSquareNeo-bRg.ttf"; sourceTree = "<group>"; };
+		71C679292A015F7F003BFD00 /* NanumSquareNeo-aLt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NanumSquareNeo-aLt.ttf"; path = "../../../../Library/Fonts/NanumSquareNeo-aLt.ttf"; sourceTree = "<group>"; };
+		71C6792A2A015F7F003BFD00 /* NanumSquareNeo-dEb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NanumSquareNeo-dEb.ttf"; path = "../../../../Library/Fonts/NanumSquareNeo-dEb.ttf"; sourceTree = "<group>"; };
+		71C6792B2A015F7F003BFD00 /* NanumSquareNeo-cBd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NanumSquareNeo-cBd.ttf"; path = "../../../../Library/Fonts/NanumSquareNeo-cBd.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,12 +121,14 @@
 		71A5976A29F85FE1000374AD /* MinimalWishList */ = {
 			isa = PBXGroup;
 			children = (
+				71C679232A00C8B8003BFD00 /* Info.plist */,
 				71A5976B29F85FE1000374AD /* MinimalWishListApp.swift */,
 				71A5979729F86E35000374AD /* WishListView.swift */,
 				71C6791A2A005157003BFD00 /* WishListViewModel.swift */,
 				71A5979A29F8712E000374AD /* WishListViewRow.swift */,
 				71A5979C29F97A14000374AD /* WritingTextAnimationView.swift */,
 				71A5979929F870E3000374AD /* Model */,
+				71C6791E2A00C245003BFD00 /* Fonts */,
 				71A597C129F9D362000374AD /* Storage */,
 				71A5976F29F85FE2000374AD /* Assets.xcassets */,
 				71A5977129F85FE2000374AD /* Preview Content */,
@@ -159,6 +176,20 @@
 				71C6791C2A0056D0003BFD00 /* WishListStorage.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		71C6791E2A00C245003BFD00 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				71C679292A015F7F003BFD00 /* NanumSquareNeo-aLt.ttf */,
+				71C679282A015F7F003BFD00 /* NanumSquareNeo-bRg.ttf */,
+				71C6792B2A015F7F003BFD00 /* NanumSquareNeo-cBd.ttf */,
+				71C6792A2A015F7F003BFD00 /* NanumSquareNeo-dEb.ttf */,
+				71C679272A015F7F003BFD00 /* NanumSquareNeo-eHv.ttf */,
+				71C6791F2A00C3A1003BFD00 /* NewYork.ttf */,
+				71C679202A00C3A1003BFD00 /* NewYorkItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,7 +296,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71C6792C2A015F7F003BFD00 /* NanumSquareNeo-eHv.ttf in Resources */,
+				71C679212A00C3A1003BFD00 /* NewYork.ttf in Resources */,
+				71C6792E2A015F7F003BFD00 /* NanumSquareNeo-aLt.ttf in Resources */,
 				71A5977329F85FE2000374AD /* Preview Assets.xcassets in Resources */,
+				71C6792F2A015F7F003BFD00 /* NanumSquareNeo-dEb.ttf in Resources */,
+				71C6792D2A015F7F003BFD00 /* NanumSquareNeo-bRg.ttf in Resources */,
+				71C679302A015F7F003BFD00 /* NanumSquareNeo-cBd.ttf in Resources */,
+				71C679222A00C3A1003BFD00 /* NewYorkItalic.ttf in Resources */,
 				71A5977029F85FE2000374AD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -460,6 +498,7 @@
 				DEVELOPMENT_TEAM = 8K4N273XSG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MinimalWishList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -493,6 +532,7 @@
 				DEVELOPMENT_TEAM = 8K4N273XSG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MinimalWishList/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

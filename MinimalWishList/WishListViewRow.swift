@@ -8,24 +8,27 @@
 import SwiftUI
 
 struct WishListViewRow: View {
-    @State var isToggleOn: Bool = false
     @State private var isOn = false
     
+    var wish: Wish
+    
     var body: some View {
-        HStack() {
+        HStack(spacing: 10) {
             Image(systemName: "sun.max")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 20)
                 .padding(.horizontal, 10)
-            Text("This is Simple Sample")
+            Text("\(wish.text)")
             Spacer()
             Toggle(isOn: $isOn) {
             }
             .toggleStyle(WishCheckBox())
+            .padding(.trailing, 20)
         }
-        .font(.system(size: 18, weight: .medium, design: .serif))
-        .padding(8)
+        .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
+        .frame(height: 40)
+        .padding(.top, 10)
     }
 }
 
@@ -44,6 +47,6 @@ struct WishCheckBox: ToggleStyle {
 
 struct WishListViewRow_Previews: PreviewProvider {
     static var previews: some View {
-        WishListViewRow()
+        WishListViewRow(wish: Wish.list[0])
     }
 }

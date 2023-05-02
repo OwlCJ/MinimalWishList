@@ -8,8 +8,8 @@ struct WishListView: View {
         NavigationView {
             VStack {
                 ScrollView {
-                    ForEach(0..<15) { _ in
-                            WishListViewRow()
+                    ForEach(Wish.list) { wish in
+                        WishListViewRow(wish: wish)
                     }
                 }
                 HStack {
@@ -25,17 +25,11 @@ struct WishListView: View {
                 }
             }
             .navigationTitle("WishList")
-            .padding(.top, 20)
         }
         .onAppear {
-            UINavigationBar.appearance().largeTitleTextAttributes =
-                       [.font: UIFont(descriptor:
-                               UIFontDescriptor.preferredFontDescriptor(withTextStyle: .largeTitle)
-                        .withDesign(.serif)!
-                        .withSymbolicTraits(.traitBold)!,
-                        size: 38)
-                       ]
-            vm.fetch()
+            UINavigationBar.appearance().largeTitleTextAttributes = [.font: UIFont(name: "NewYork-SemiBoldItalic", size: 50)!]
+            
+//            vm.fetch()
         }
     }
 }
