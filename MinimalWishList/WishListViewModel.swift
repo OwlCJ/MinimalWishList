@@ -12,11 +12,21 @@ final class WishListViewModel: ObservableObject {
     let storage: WishListStorage
     
     @Published var list: [Wish] = []
+    
     var subscriptions = Set<AnyCancellable>()
     
     init(storage: WishListStorage) {
         self.storage = storage
         bind()
+    }
+    
+    func addWish(text: String) {
+        let newWish = Wish(text: text, date: Date(), isDone: false)
+        self.list.append(newWish)
+    }
+    
+    func deleteWish(at offsets: IndexSet) {
+        self.list.remove(atOffsets: offsets)
     }
     
     private func bind() {

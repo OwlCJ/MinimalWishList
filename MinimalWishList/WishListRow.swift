@@ -7,10 +7,8 @@
 
 import SwiftUI
 
-struct WishListViewRow: View {
-    @State private var isOn = false
-    
-    var wish: Wish
+struct WishListRow: View {
+    @Binding var wish: Wish
     
     var body: some View {
         HStack(spacing: 10) {
@@ -19,16 +17,15 @@ struct WishListViewRow: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 20)
                 .padding(.horizontal, 10)
-            Text("\(wish.text)")
+            Text(wish.text).strikethrough(wish.isDone)
             Spacer()
-            Toggle(isOn: $isOn) {
+            Toggle(isOn: $wish.isDone) {
             }
             .toggleStyle(WishCheckBox())
             .padding(.trailing, 20)
         }
         .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
         .frame(height: 40)
-        .padding(.top, 10)
     }
 }
 
@@ -45,8 +42,8 @@ struct WishCheckBox: ToggleStyle {
     }
 }
 
-struct WishListViewRow_Previews: PreviewProvider {
+struct WishListRow_Previews: PreviewProvider {
     static var previews: some View {
-        WishListViewRow(wish: Wish.list[0])
+        WishListRow(wish: .constant(Wish.list[0]))
     }
 }

@@ -11,14 +11,7 @@ import SwiftUI
 struct MinimalWishListApp: App {
     var body: some Scene {
         WindowGroup {
-            WishListView(vm: WishListViewModel(storage: WishListStorage())).onAppear {
-                for family: String in UIFont.familyNames {
-                                print(family)
-                                for names : String in UIFont.fontNames(forFamilyName: family){
-                                    print("=== \(names)")
-                                }
-                            }
-            }
+            WishListView(vm: WishListViewModel(storage: WishListStorage()))
         }
     }
 }

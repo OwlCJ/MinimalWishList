@@ -5,31 +5,30 @@ struct WishListView: View {
     @StateObject var vm: WishListViewModel
     
     var body: some View {
-        NavigationView {
-            VStack {
-                ScrollView {
-                    ForEach(Wish.list) { wish in
-                        WishListViewRow(wish: wish)
-                    }
+        NavigationStack {
+            List {
+                ForEach(vm.list) { wish in
+                    WishListRow(wish: $vm.list[vm.list.firstIndex(where: { $0.id == wish.id })!])
                 }
-                HStack {
-                    Button {
-                        print("----> Add Button Clicked")
-                    } label: {
-                        Image(systemName: "plus")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .foregroundColor(.black)
-                            .frame(width: 25)
-                    }
-                }
+                .onDelete(perform: vm.deleteWish)
             }
             .navigationTitle("WishList")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        vm.addWish(text: "New Wish")
+                    } label: {
+                        Image(systemName: "plus")
+                    }
+                    .foregroundColor(.primary)
+                }
+            }
+            .listStyle(.inset)
         }
         .onAppear {
             UINavigationBar.appearance().largeTitleTextAttributes = [.font: UIFont(name: "NewYork-SemiBoldItalic", size: 50)!]
             
-//            vm.fetch()
+            vm.fetch()
         }
     }
 }
