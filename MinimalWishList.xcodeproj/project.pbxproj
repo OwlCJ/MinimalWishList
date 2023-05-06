@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71864F452A0457C100DDCB88 /* WishDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71864F442A0457C100DDCB88 /* WishDatePickerView.swift */; };
 		71A5976C29F85FE1000374AD /* MinimalWishListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5976B29F85FE1000374AD /* MinimalWishListApp.swift */; };
 		71A5977029F85FE2000374AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A5976F29F85FE2000374AD /* Assets.xcassets */; };
 		71A5977329F85FE2000374AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A5977229F85FE2000374AD /* Preview Assets.xcassets */; };
@@ -27,6 +28,9 @@
 		71C6792E2A015F7F003BFD00 /* NanumSquareNeo-aLt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C679292A015F7F003BFD00 /* NanumSquareNeo-aLt.ttf */; };
 		71C6792F2A015F7F003BFD00 /* NanumSquareNeo-dEb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C6792A2A015F7F003BFD00 /* NanumSquareNeo-dEb.ttf */; };
 		71C679302A015F7F003BFD00 /* NanumSquareNeo-cBd.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 71C6792B2A015F7F003BFD00 /* NanumSquareNeo-cBd.ttf */; };
+		71CD97BA2A0229BA0057AC42 /* WishAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD97B92A0229BA0057AC42 /* WishAddView.swift */; };
+		71CD97BC2A02CFD10057AC42 /* WishImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD97BB2A02CFD10057AC42 /* WishImage.swift */; };
+		71CD97C22A0335BF0057AC42 /* WishIconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD97C12A0335BF0057AC42 /* WishIconPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		71864F442A0457C100DDCB88 /* WishDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishDatePickerView.swift; sourceTree = "<group>"; };
 		71A5976829F85FE1000374AD /* MinimalWishList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalWishList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A5976B29F85FE1000374AD /* MinimalWishListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimalWishListApp.swift; sourceTree = "<group>"; };
 		71A5976F29F85FE2000374AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +76,9 @@
 		71C679292A015F7F003BFD00 /* NanumSquareNeo-aLt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NanumSquareNeo-aLt.ttf"; path = "../../../../Library/Fonts/NanumSquareNeo-aLt.ttf"; sourceTree = "<group>"; };
 		71C6792A2A015F7F003BFD00 /* NanumSquareNeo-dEb.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NanumSquareNeo-dEb.ttf"; path = "../../../../Library/Fonts/NanumSquareNeo-dEb.ttf"; sourceTree = "<group>"; };
 		71C6792B2A015F7F003BFD00 /* NanumSquareNeo-cBd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NanumSquareNeo-cBd.ttf"; path = "../../../../Library/Fonts/NanumSquareNeo-cBd.ttf"; sourceTree = "<group>"; };
+		71CD97B92A0229BA0057AC42 /* WishAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishAddView.swift; sourceTree = "<group>"; };
+		71CD97BB2A02CFD10057AC42 /* WishImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishImage.swift; sourceTree = "<group>"; };
+		71CD97C12A0335BF0057AC42 /* WishIconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishIconPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,14 +131,12 @@
 			children = (
 				71C679232A00C8B8003BFD00 /* Info.plist */,
 				71A5976B29F85FE1000374AD /* MinimalWishListApp.swift */,
-				71A5979729F86E35000374AD /* WishListView.swift */,
-				71C6791A2A005157003BFD00 /* WishListViewModel.swift */,
-				71A5979A29F8712E000374AD /* WishListRow.swift */,
-				71A5979C29F97A14000374AD /* WritingTextAnimationView.swift */,
+				71CD97B62A0228000057AC42 /* Wish List */,
 				71A5979929F870E3000374AD /* Model */,
 				71C6791E2A00C245003BFD00 /* Fonts */,
 				71A597C129F9D362000374AD /* Storage */,
 				71A5976F29F85FE2000374AD /* Assets.xcassets */,
+				71A5979C29F97A14000374AD /* WritingTextAnimationView.swift */,
 				71A5977129F85FE2000374AD /* Preview Content */,
 			);
 			path = MinimalWishList;
@@ -165,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				71A5979529F86AAC000374AD /* Wish.swift */,
+				71CD97BB2A02CFD10057AC42 /* WishImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,6 +197,19 @@
 				71C679202A00C3A1003BFD00 /* NewYorkItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		71CD97B62A0228000057AC42 /* Wish List */ = {
+			isa = PBXGroup;
+			children = (
+				71A5979729F86E35000374AD /* WishListView.swift */,
+				71C6791A2A005157003BFD00 /* WishListViewModel.swift */,
+				71A5979A29F8712E000374AD /* WishListRow.swift */,
+				71CD97B92A0229BA0057AC42 /* WishAddView.swift */,
+				71864F442A0457C100DDCB88 /* WishDatePickerView.swift */,
+				71CD97C12A0335BF0057AC42 /* WishIconPickerView.swift */,
+			);
+			path = "Wish List";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,13 +349,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71CD97BC2A02CFD10057AC42 /* WishImage.swift in Sources */,
 				71A5979829F86E35000374AD /* WishListView.swift in Sources */,
 				71A5979D29F97A14000374AD /* WritingTextAnimationView.swift in Sources */,
 				71A5979629F86AAC000374AD /* Wish.swift in Sources */,
 				71A5979B29F8712E000374AD /* WishListRow.swift in Sources */,
+				71864F452A0457C100DDCB88 /* WishDatePickerView.swift in Sources */,
 				71C6791D2A0056D0003BFD00 /* WishListStorage.swift in Sources */,
 				71A5976C29F85FE1000374AD /* MinimalWishListApp.swift in Sources */,
 				71C6791B2A005157003BFD00 /* WishListViewModel.swift in Sources */,
+				71CD97C22A0335BF0057AC42 /* WishIconPickerView.swift in Sources */,
+				71CD97BA2A0229BA0057AC42 /* WishAddView.swift in Sources */,
 				71A597C329F9D36E000374AD /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +526,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -536,6 +561,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
