@@ -11,11 +11,11 @@ struct WishListRow: View {
     @Binding var wish: Wish
     
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 5) {
             Image(systemName: wish.image.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 22, height: 22)
+                .frame(width: 20, height: 20)
                 .padding(.trailing, 10)
             VStack {
                 Text(wish.text).strikethrough(wish.isDone)
@@ -26,20 +26,22 @@ struct WishListRow: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
             }
             Spacer()
-            Text("D-\(remainDays(endDate: wish.endDate))")
+            Text("D\(remainDays(endDate: wish.endDate))")
                 .font(.system(.caption))
             Toggle(isOn: $wish.isDone) {}
             .toggleStyle(WishCheckBox())
         }
-        .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
+        .font(.custom("NanumSquareNeoTTF-cBd", size: 17))
         .frame(height: 45)
     }
     
-    func remainDays(endDate: Date) -> Int {
+    func remainDays(endDate: Date) -> String {
         let calendar = Calendar.current
         let components = calendar.dateComponents([.day], from: calendar.startOfDay(for: .now), to: endDate)
         
-        return components.day ?? 0
+        guard let day = components.day else { return "-" }
+        let result = day > 0 ? "-\(String(day))" : "+\(String(-day))"
+        return result
     }
     
     let dateFormatter: DateFormatter = {

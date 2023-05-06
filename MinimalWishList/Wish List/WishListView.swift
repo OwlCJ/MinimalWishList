@@ -2,7 +2,6 @@
 import SwiftUI
 
 struct WishListView: View {
-    @Environment(\.editMode) var editMode
     @StateObject var vm: WishListViewModel
     
     var body: some View {
