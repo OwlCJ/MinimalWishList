@@ -1,9 +1,3 @@
-//
-//  WishAddView.swift
-//  MinimalWishList
-//
-//  Created by 박철진 on 2023/05/03.
-//
 
 import SwiftUI
 

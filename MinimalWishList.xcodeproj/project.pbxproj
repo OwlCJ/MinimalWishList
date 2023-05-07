@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		713368D32A07761E00638572 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713368D22A07761E00638572 /* LaunchScreenView.swift */; };
 		71864F452A0457C100DDCB88 /* WishDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71864F442A0457C100DDCB88 /* WishDatePickerView.swift */; };
 		71864F4A2A0666AE00DDCB88 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71864F492A0666AE00DDCB88 /* SettingsView.swift */; };
 		71A5976C29F85FE1000374AD /* MinimalWishListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5976B29F85FE1000374AD /* MinimalWishListApp.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		713368D22A07761E00638572 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		71864F442A0457C100DDCB88 /* WishDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishDatePickerView.swift; sourceTree = "<group>"; };
 		71864F492A0666AE00DDCB88 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		71A5976829F85FE1000374AD /* MinimalWishList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MinimalWishList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +135,7 @@
 			children = (
 				71C679232A00C8B8003BFD00 /* Info.plist */,
 				71A5976B29F85FE1000374AD /* MinimalWishListApp.swift */,
+				713368D22A07761E00638572 /* LaunchScreenView.swift */,
 				71CD97B62A0228000057AC42 /* Wish List */,
 				71864F482A06669300DDCB88 /* Settings */,
 				71A5979929F870E3000374AD /* Model */,
@@ -353,6 +356,7 @@
 				71C6791D2A0056D0003BFD00 /* WishListStorage.swift in Sources */,
 				71A5976C29F85FE1000374AD /* MinimalWishListApp.swift in Sources */,
 				71C6791B2A005157003BFD00 /* WishListViewModel.swift in Sources */,
+				713368D32A07761E00638572 /* LaunchScreenView.swift in Sources */,
 				71CD97C22A0335BF0057AC42 /* WishIconPickerView.swift in Sources */,
 				71CD97BA2A0229BA0057AC42 /* WishAddView.swift in Sources */,
 				71A597C329F9D36E000374AD /* Storage.swift in Sources */,
@@ -512,6 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MinimalWishList/Preview Content\"";
@@ -519,6 +524,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MinimalWishList/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WishList;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -547,6 +554,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MinimalWishList/Preview Content\"";
@@ -554,6 +562,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MinimalWishList/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WishList;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

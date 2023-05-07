@@ -1,9 +1,3 @@
-//
-//  WishDatePickerView.swift
-//  MinimalWishList
-//
-//  Created by 박철진 on 2023/05/05.
-//
 
 import SwiftUI
 
