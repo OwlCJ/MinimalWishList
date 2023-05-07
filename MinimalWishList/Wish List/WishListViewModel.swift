@@ -1,7 +1,6 @@
 
 import Foundation
 import Combine
-import LocalAuthentication
 
 final class WishListViewModel: ObservableObject {
     let storage: WishListStorage

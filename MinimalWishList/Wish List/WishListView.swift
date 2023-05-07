@@ -8,20 +8,7 @@ struct WishListView: View {
         NavigationView {
             VStack {
                 WishLists(vm: vm)
-                HStack {
-                    Spacer()
-                    Button {
-                        vm.isSettingPresented = true
-                    } label: {
-                        Image(systemName: "gear").font(.system(size: 18))
-                    }
-                    .padding(.trailing, 22)
-                    .foregroundColor(.primary)
-                    .sheet(isPresented: $vm.isSettingPresented) {
-                        SettingsView(vm: vm)
-                            .presentationDetents([.height(45)])
-                    }
-                }
+                Settings(vm: vm)
             }
         }
         .onAppear {
@@ -70,6 +57,27 @@ struct WishLists: View {
         .sheet(isPresented: $vm.isAddPresented) {
             WishAddView(vm: vm)
                 .presentationDetents([.height(350)])
+        }
+    }
+}
+
+struct Settings: View {
+    @StateObject var vm: WishListViewModel
+    
+    var body: some View {
+        HStack {
+            Spacer()
+            Button {
+                vm.isSettingPresented = true
+            } label: {
+                Image(systemName: "gear").font(.system(size: 18))
+            }
+            .padding()
+            .foregroundColor(.primary)
+            .sheet(isPresented: $vm.isSettingPresented) {
+                SettingsView(vm: vm)
+                    .presentationDetents([.height(55)])
+            }
         }
     }
 }

@@ -49,7 +49,7 @@ struct SettingsView: View {
             }
             .font(.system(size: 18))
         }
-        .padding(.horizontal, 22)
+        .padding()
     }
 }
 

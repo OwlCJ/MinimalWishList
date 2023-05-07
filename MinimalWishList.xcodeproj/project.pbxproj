@@ -19,7 +19,6 @@
 		71A5979629F86AAC000374AD /* Wish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5979529F86AAC000374AD /* Wish.swift */; };
 		71A5979829F86E35000374AD /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5979729F86E35000374AD /* WishListView.swift */; };
 		71A5979B29F8712E000374AD /* WishListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5979A29F8712E000374AD /* WishListRow.swift */; };
-		71A5979D29F97A14000374AD /* WritingTextAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5979C29F97A14000374AD /* WritingTextAnimationView.swift */; };
 		71A597C329F9D36E000374AD /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A597C229F9D36E000374AD /* Storage.swift */; };
 		71C6791B2A005157003BFD00 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6791A2A005157003BFD00 /* WishListViewModel.swift */; };
 		71C6791D2A0056D0003BFD00 /* WishListStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C6791C2A0056D0003BFD00 /* WishListStorage.swift */; };
@@ -64,7 +63,6 @@
 		71A5979529F86AAC000374AD /* Wish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wish.swift; sourceTree = "<group>"; };
 		71A5979729F86E35000374AD /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		71A5979A29F8712E000374AD /* WishListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListRow.swift; sourceTree = "<group>"; };
-		71A5979C29F97A14000374AD /* WritingTextAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingTextAnimationView.swift; sourceTree = "<group>"; };
 		71A597C229F9D36E000374AD /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		71C6791A2A005157003BFD00 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 		71C6791C2A0056D0003BFD00 /* WishListStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListStorage.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 				71C6791E2A00C245003BFD00 /* Fonts */,
 				71A597C129F9D362000374AD /* Storage */,
 				71A5976F29F85FE2000374AD /* Assets.xcassets */,
-				71A5979C29F97A14000374AD /* WritingTextAnimationView.swift */,
 				71A5977129F85FE2000374AD /* Preview Content */,
 			);
 			path = MinimalWishList;
@@ -349,7 +346,6 @@
 			files = (
 				71CD97BC2A02CFD10057AC42 /* WishImage.swift in Sources */,
 				71A5979829F86E35000374AD /* WishListView.swift in Sources */,
-				71A5979D29F97A14000374AD /* WritingTextAnimationView.swift in Sources */,
 				71A5979629F86AAC000374AD /* Wish.swift in Sources */,
 				71A5979B29F8712E000374AD /* WishListRow.swift in Sources */,
 				71864F452A0457C100DDCB88 /* WishDatePickerView.swift in Sources */,
@@ -517,6 +513,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MinimalWishList/Preview Content\"";
@@ -524,8 +521,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MinimalWishList/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WishList;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_CFBundleDisplayName = "Minimal WishList";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -538,8 +535,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = CJPark.MinimalWishList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CJPark.MinimalWishList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -555,6 +553,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MinimalWishList/Preview Content\"";
@@ -562,8 +561,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MinimalWishList/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = WishList;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_CFBundleDisplayName = "Minimal WishList";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -576,8 +575,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = CJPark.MinimalWishList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CJPark.MinimalWishList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
