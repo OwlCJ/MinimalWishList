@@ -26,7 +26,7 @@ struct WishAddView: View {
                     .focused($addWishFocused)
                     .onSubmit {
                         vm.addWish()
-                        vm.isPresented = false
+                        vm.isAddPresented = false
                     }
             }
             Spacer()

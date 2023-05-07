@@ -40,7 +40,7 @@ struct WishIconPickerView: View {
                 .foregroundColor( vm.newWishImage == icon ? .primary : .secondary)
             }
         }
-        .font(.system(size: 25))
+        .font(.system(size: 20))
     }
 }
 

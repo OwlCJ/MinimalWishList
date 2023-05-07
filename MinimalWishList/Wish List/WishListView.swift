@@ -6,34 +6,22 @@ struct WishListView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(vm.list) { wish in
-                    let index = vm.list.firstIndex(where: {$0.id == wish.id })!
-                    WishListRow(wish: $vm.list[index])
-                }
-                .onDelete(perform: vm.deleteWish)
-                .onMove(perform: vm.moveWish)
-            }
-            .navigationTitle("WishList")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-
-                ToolbarItem(placement: .navigationBarTrailing) {
+            VStack {
+                WishLists(vm: vm)
+                HStack {
+                    Spacer()
                     Button {
-                        vm.isPresented = true
+                        vm.isSettingPresented = true
                     } label: {
-                        Image(systemName: "plus")
+                        Image(systemName: "gear").font(.system(size: 18))
+                    }
+                    .padding(.trailing, 22)
+                    .foregroundColor(.primary)
+                    .sheet(isPresented: $vm.isSettingPresented) {
+                        SettingsView(vm: vm)
+                            .presentationDetents([.height(45)])
                     }
                 }
-                
-            }
-            .foregroundColor(.primary)
-            .listStyle(.inset)
-            .sheet(isPresented: $vm.isPresented) {
-                WishAddView(vm: vm)
-                    .presentationDetents([.height(350)])
             }
         }
         .onAppear {
@@ -47,5 +35,41 @@ struct WishListView: View {
 struct WishListView_Previews: PreviewProvider {
     static var previews: some View {
         WishListView(vm: WishListViewModel(storage: WishListStorage()))
+    }
+}
+
+struct WishLists: View {
+    @StateObject var vm: WishListViewModel
+    
+    var body: some View {
+        List {
+            ForEach(vm.list) { wish in
+                let index = vm.list.firstIndex(where: {$0.id == wish.id })!
+                WishListRow(wish: $vm.list[index])
+            }
+            .onDelete(perform: vm.deleteWish)
+            .onMove(perform: vm.moveWish)
+        }
+        .navigationTitle("WishList")
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                EditButton()
+            }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    vm.isAddPresented = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
+            
+        }
+        .foregroundColor(.primary)
+        .listStyle(.inset)
+        .sheet(isPresented: $vm.isAddPresented) {
+            WishAddView(vm: vm)
+                .presentationDetents([.height(350)])
+        }
     }
 }
