@@ -28,6 +28,7 @@
 		71CD97BA2A0229BA0057AC42 /* WishAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD97B92A0229BA0057AC42 /* WishAddView.swift */; };
 		71CD97BC2A02CFD10057AC42 /* WishImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD97BB2A02CFD10057AC42 /* WishImage.swift */; };
 		71CD97C22A0335BF0057AC42 /* WishIconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD97C12A0335BF0057AC42 /* WishIconPickerView.swift */; };
+		71DBD3552A08A14B005B8122 /* WishEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DBD3542A08A14B005B8122 /* WishEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		71CD97B92A0229BA0057AC42 /* WishAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishAddView.swift; sourceTree = "<group>"; };
 		71CD97BB2A02CFD10057AC42 /* WishImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishImage.swift; sourceTree = "<group>"; };
 		71CD97C12A0335BF0057AC42 /* WishIconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishIconPickerView.swift; sourceTree = "<group>"; };
+		71DBD3542A08A14B005B8122 /* WishEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				71C6791A2A005157003BFD00 /* WishListViewModel.swift */,
 				71A5979A29F8712E000374AD /* WishListRow.swift */,
 				71CD97B92A0229BA0057AC42 /* WishAddView.swift */,
+				71DBD3542A08A14B005B8122 /* WishEditView.swift */,
 				71864F442A0457C100DDCB88 /* WishDatePickerView.swift */,
 				71CD97C12A0335BF0057AC42 /* WishIconPickerView.swift */,
 			);
@@ -355,6 +358,7 @@
 				713368D32A07761E00638572 /* LaunchScreenView.swift in Sources */,
 				71CD97C22A0335BF0057AC42 /* WishIconPickerView.swift in Sources */,
 				71CD97BA2A0229BA0057AC42 /* WishAddView.swift in Sources */,
+				71DBD3552A08A14B005B8122 /* WishEditView.swift in Sources */,
 				71A597C329F9D36E000374AD /* Storage.swift in Sources */,
 				71864F4A2A0666AE00DDCB88 /* SettingsView.swift in Sources */,
 			);

@@ -27,12 +27,20 @@ struct WishListView_Previews: PreviewProvider {
 
 struct WishLists: View {
     @StateObject var vm: WishListViewModel
+    @State private var multiSelection = Set<UUID>()
     
     var body: some View {
-        List {
+//        List(vm.list, selection: $multiSelection) { wish in
+//            let index = vm.list.firstIndex(where: { $0.id == wish.id })!
+//            WishListRow(wish: $vm.list[index])
+//        }
+        List(selection: $multiSelection) {
             ForEach(vm.list) { wish in
-                let index = vm.list.firstIndex(where: {$0.id == wish.id })!
+                let index = vm.list.firstIndex(where: { $0.id == wish.id })!
                 WishListRow(wish: $vm.list[index])
+                    .onLongPressGesture {
+                        vm.isEditPresented = true
+                    }
             }
             .onDelete(perform: vm.deleteWish)
             .onMove(perform: vm.moveWish)
@@ -52,10 +60,15 @@ struct WishLists: View {
             }
             
         }
+        
         .foregroundColor(.primary)
         .listStyle(.inset)
         .sheet(isPresented: $vm.isAddPresented) {
             WishAddView(vm: vm)
+                .presentationDetents([.height(350)])
+        }
+        .sheet(isPresented: $vm.isEditPresented) {
+            WishEditView(vm: vm)
                 .presentationDetents([.height(350)])
         }
     }

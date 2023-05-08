@@ -3,21 +3,24 @@ import SwiftUI
 
 struct WishListRow: View {
     @Binding var wish: Wish
+    @State var isEditPresented = false
     
     var body: some View {
         HStack(spacing: 5) {
-            Image(systemName: wish.image.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 20, height: 20)
+            HStack {
+                Image(systemName: wish.image.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 20, height: 20)
                 .padding(.trailing, 10)
-            VStack {
-                Text(wish.text).strikethrough(wish.isDone)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                Text(dateFormatter.string(from: wish.endDate))
-                    .font(.system(.caption))
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
+                VStack {
+                    Text(wish.text).strikethrough(wish.isDone)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    Text(dateFormatter.string(from: wish.endDate))
+                        .font(.system(.caption))
+                        .foregroundColor(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
             }
             Spacer()
             Text("D\(remainDays(endDate: wish.endDate))")

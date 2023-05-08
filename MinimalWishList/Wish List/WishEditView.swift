@@ -1,13 +1,13 @@
 
 import SwiftUI
 
-struct WishAddView: View {
+struct WishEditView: View {
     @StateObject var vm: WishListViewModel
     @FocusState private var wishFocused: Bool
     
     var body: some View {
         VStack(spacing: 10) {
-            Text("What's your Wish?")
+            Text("Edit your Wish?")
                 .font(.custom("NewYork-SemiBoldItalic", size: 30))
             Rectangle()
                 .foregroundColor(.primary)
@@ -19,8 +19,8 @@ struct WishAddView: View {
                     .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
                     .focused($wishFocused)
                     .onSubmit {
-                        vm.addWish()
-                        vm.isAddPresented = false
+                        vm.editWish()
+                        vm.isEditPresented = false
                     }
             }
             Spacer()
@@ -34,14 +34,13 @@ struct WishAddView: View {
         .onDisappear() {
             vm.newWishText = ""
             vm.newWishImage = .etc
-            vm.newWishEndDate = Date()
         }
     }
 }
 
-struct WishAddView_Previews: PreviewProvider {
+struct WishEditView_Previews: PreviewProvider {
     static var previews: some View {
         let vm =  WishListViewModel(storage: WishListStorage())
-        WishAddView(vm: vm)
+        WishEditView(vm: vm)
     }
 }

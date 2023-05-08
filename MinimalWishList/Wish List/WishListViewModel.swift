@@ -9,6 +9,8 @@ final class WishListViewModel: ObservableObject {
     @Published var newWishText: String = ""
     @Published var newWishImage: WishImage = .etc
     @Published var newWishEndDate: Date = Date()
+    
+    @Published var isEditPresented: Bool = false
     @Published var isAddPresented: Bool = false
     @Published var isSettingPresented: Bool = false
     
@@ -24,6 +26,10 @@ final class WishListViewModel: ObservableObject {
         guard !newWishText.isEmpty else { return }
         let newWish = Wish(image: newWishImage, text: newWishText, startDate: Date(), endDate: newWishEndDate, isDone: false)
         self.list.append(newWish)
+    }
+    
+    func editWish() {
+        
     }
     
     func deleteWish(at offsets: IndexSet) {

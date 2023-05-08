@@ -3,20 +3,15 @@ import SwiftUI
 
 struct WishDatePickerView: View {
     @StateObject var vm: WishListViewModel
-    @State var isOn: Bool = false
-    
+
     var body: some View {
         HStack {
-            Button {
-                isOn.toggle()
-                print(isOn)
-            } label: {
-                Image(systemName: "calendar")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 25)
-            }
-            .padding(.trailing, 10)
+            Image(systemName: "calendar")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 25)
+                .padding(.trailing, 10)
+            Spacer()
             DatePicker(
                 "End Date",
                 selection: $vm.newWishEndDate,
