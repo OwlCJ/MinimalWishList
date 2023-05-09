@@ -3,6 +3,7 @@ import SwiftUI
 
 struct WishListRow: View {
     @Binding var wish: Wish
+    @StateObject var vm: WishListViewModel
     @State var isEditPresented = false
     
     var body: some View {
@@ -22,14 +23,20 @@ struct WishListRow: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
-            Spacer()
+            .onTapGesture {
+                isEditPresented = true
+            }
             Text("D\(remainDays(endDate: wish.endDate))")
                 .font(.system(.caption))
             Toggle(isOn: $wish.isDone) {}
             .toggleStyle(WishCheckBox())
         }
-        .font(.custom("NanumSquareNeoTTF-cBd", size: 17))
-        .frame(height: 45)
+        .font(.custom("NanumSquareNeoTTF-cBd", size: 16))
+        .frame(height: 50)
+        .sheet(isPresented: $isEditPresented) {
+            WishEditView(wish: $wish, isEditPresented: $isEditPresented, vm: vm)
+                .presentationDetents([.height(350)])
+        }
     }
     
     func remainDays(endDate: Date) -> String {
@@ -63,6 +70,7 @@ struct WishCheckBox: ToggleStyle {
 
 struct WishListRow_Previews: PreviewProvider {
     static var previews: some View {
-        WishListRow(wish: .constant(Wish.list[0]))
+        let vm =  WishListViewModel(storage: WishListStorage())
+        WishListRow(wish: .constant(Wish.list[0]), vm: vm)
     }
 }

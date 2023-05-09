@@ -2,6 +2,8 @@
 import SwiftUI
 
 struct WishEditView: View {
+    @Binding var wish: Wish
+    @Binding var isEditPresented: Bool
     @StateObject var vm: WishListViewModel
     @FocusState private var wishFocused: Bool
     
@@ -19,8 +21,8 @@ struct WishEditView: View {
                     .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
                     .focused($wishFocused)
                     .onSubmit {
-                        vm.editWish()
-                        vm.isEditPresented = false
+                        vm.editWish(wish: wish)
+                        isEditPresented = false
                     }
             }
             Spacer()
@@ -30,8 +32,12 @@ struct WishEditView: View {
         .padding()
         .onAppear {
             wishFocused = true
+            vm.newWishImage = wish.image
+            vm.newWishText = wish.text
+            vm.newWishEndDate = wish.endDate
         }
         .onDisappear() {
+            print(vm.list)
             vm.newWishText = ""
             vm.newWishImage = .etc
         }
@@ -41,6 +47,6 @@ struct WishEditView: View {
 struct WishEditView_Previews: PreviewProvider {
     static var previews: some View {
         let vm =  WishListViewModel(storage: WishListStorage())
-        WishEditView(vm: vm)
+        WishEditView(wish: .constant(Wish.list[0]),isEditPresented: .constant(true) ,vm: vm)
     }
 }
