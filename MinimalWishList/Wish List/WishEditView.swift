@@ -37,7 +37,6 @@ struct WishEditView: View {
             vm.newWishEndDate = wish.endDate
         }
         .onDisappear() {
-            print(vm.list)
             vm.newWishText = ""
             vm.newWishImage = .etc
         }

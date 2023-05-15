@@ -1,6 +1,7 @@
 
 import SwiftUI
 import StoreKit
+import LocalAuthentication
 
 struct SettingsView: View {
     @StateObject var vm: WishListViewModel
@@ -8,6 +9,7 @@ struct SettingsView: View {
     @Environment(\.requestReview) private var requestReview
     @State private var resetCheck: Bool = false
     @State private var appInfo: Bool = false
+    @State private var usingAuth: Bool = UserDefaults.standard.bool(forKey: "useAuthentication")
     
     let appInfoText: String = """
     Minimal Wish List v1.0
@@ -31,6 +33,11 @@ struct SettingsView: View {
                     } label: {
                         Image(systemName: "star")
                     }
+                    Button {
+                        useAuthentication()
+                    } label: {
+                        usingAuth ? Image(systemName: "lock") : Image(systemName: "lock.open")
+                    }
                 }
                 .foregroundColor(.primary)
                 Spacer()
@@ -49,7 +56,21 @@ struct SettingsView: View {
             }
             .font(.system(size: 18))
         }
+        .onAppear {
+            print(usingAuth)
+            print(UserDefaults.standard.bool(forKey: "useAuthentication"))
+        }
         .padding()
+    }
+    
+    func useAuthentication() {
+        if usingAuth == false {
+            UserDefaults.standard.set(true, forKey: "useAuthentication")
+            usingAuth = true
+        } else if usingAuth == true {
+            UserDefaults.standard.set(false, forKey: "useAuthentication")
+            usingAuth = false
+        }
     }
 }
 
