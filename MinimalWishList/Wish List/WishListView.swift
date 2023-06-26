@@ -13,8 +13,15 @@ struct WishListView: View {
         }
         .onAppear {
             UINavigationBar.appearance().largeTitleTextAttributes = [.font: UIFont(name: "NewYork-SemiBoldItalic", size: 50)!]
-            
             vm.fetch()
+        }
+        
+        .onReceive(NotificationCenter.default.publisher(for: UIApplication.didEnterBackgroundNotification)) { _ in
+            DispatchQueue.main.async {
+                if vm.usingAuth && vm.isUnlocked {
+                    vm.isUnlocked = false
+                }
+            }
         }
     }
 }
@@ -77,7 +84,6 @@ struct Settings: View {
             .foregroundColor(.primary)
             .sheet(isPresented: $vm.isSettingPresented) {
                 SettingsView(vm: vm)
-                    .presentationDetents([.height(60)])
             }
         }
     }

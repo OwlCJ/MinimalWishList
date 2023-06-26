@@ -3,7 +3,6 @@ import SwiftUI
 
 struct WishEditView: View {
     @Binding var wish: Wish
-    @Binding var isEditPresented: Bool
     @StateObject var vm: WishListViewModel
     @FocusState private var wishFocused: Bool
     
@@ -22,7 +21,7 @@ struct WishEditView: View {
                     .focused($wishFocused)
                     .onSubmit {
                         vm.editWish(wish: wish)
-                        isEditPresented = false
+                        vm.isEditPresented = false
                     }
             }
             Spacer()
@@ -46,6 +45,6 @@ struct WishEditView: View {
 struct WishEditView_Previews: PreviewProvider {
     static var previews: some View {
         let vm =  WishListViewModel(storage: WishListStorage())
-        WishEditView(wish: .constant(Wish.list[0]),isEditPresented: .constant(true) ,vm: vm)
+        WishEditView(wish: .constant(Wish.list[0]) ,vm: vm)
     }
 }

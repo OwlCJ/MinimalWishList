@@ -6,17 +6,16 @@ struct LaunchScreenView: View {
     @StateObject var vm: WishListViewModel
     @State private var isDone = false
     @State private var opacity = 0.5
-    @State private var usingAuth = UserDefaults.standard.bool(forKey: "useAuthentication")
     
     var body: some View {
-        if isDone && !usingAuth {
+        if isDone && (!vm.usingAuth || vm.isUnlocked) {
             WishListView(vm: vm)
         } else {
             Section {
                 VStack {
                     Text("Minimal")
                         .font(.custom("NewYork-SemiBoldItalic", size: 43))
-                    Text("Wish List")
+                    Text("Wish")
                         .font(.custom("NewYork-SemiBoldItalic", size: 38))
                 }
                 .foregroundColor(.primary)
@@ -30,28 +29,12 @@ struct LaunchScreenView: View {
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                     self.isDone = true
-                    if usingAuth { authenticate() }
+                    if vm.usingAuth { vm.authenticate() }
                 }
             }
         }
     }
     
-    func authenticate() {
-        let context = LAContext()
-        var error: NSError?
-
-        if context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &error) {
-            let reason = "We need your bioInformation to protect your wishes."
-            context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason) { success, error in
-                if success {
-                    usingAuth.toggle()
-                } else {
-                    // 인증 실패
-                    print("Face ID 인증 실패")
-                }
-            }
-        }
-    }
 }
 
 struct LaunchScreenView_Previews: PreviewProvider {

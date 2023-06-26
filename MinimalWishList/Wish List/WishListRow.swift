@@ -4,7 +4,6 @@ import SwiftUI
 struct WishListRow: View {
     @Binding var wish: Wish
     @StateObject var vm: WishListViewModel
-    @State var isEditPresented = false
     
     var body: some View {
         HStack(spacing: 5) {
@@ -24,7 +23,7 @@ struct WishListRow: View {
                 }
             }
             .onTapGesture {
-                isEditPresented = true
+                vm.isEditPresented = true
             }
             Text("D\(remainDays(endDate: wish.endDate))")
                 .font(.system(.caption))
@@ -33,8 +32,8 @@ struct WishListRow: View {
         }
         .font(.custom("NanumSquareNeoTTF-cBd", size: 16))
         .frame(height: 50)
-        .sheet(isPresented: $isEditPresented) {
-            WishEditView(wish: $wish, isEditPresented: $isEditPresented, vm: vm)
+        .sheet(isPresented: $vm.isEditPresented) {
+            WishEditView(wish: $wish, vm: vm)
                 .presentationDetents([.height(350)])
         }
     }

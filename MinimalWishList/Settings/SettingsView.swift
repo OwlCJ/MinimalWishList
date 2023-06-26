@@ -1,76 +1,78 @@
 
 import SwiftUI
 import StoreKit
-import LocalAuthentication
+
 
 struct SettingsView: View {
     @StateObject var vm: WishListViewModel
-    
     @Environment(\.requestReview) private var requestReview
-    @State private var resetCheck: Bool = false
-    @State private var appInfo: Bool = false
-    @State private var usingAuth: Bool = UserDefaults.standard.bool(forKey: "useAuthentication")
     
-    let appInfoText: String = """
-    Minimal Wish List v1.0
-    
-    © 2023 CJPark
-    """
+    @State var resetCheck: Bool = false
+    @State var appInfo: Bool = false
+    @State var authBtn: Bool = false
     
     var body: some View {
-        VStack {
+        VStack() {
+            HStack {
+                Text("Settings")
+                    .font(.custom("NewYork-SemiBoldItalic", size: 45))
+                Spacer()
+            }.padding(.bottom, 50)
             Spacer()
-            HStack(spacing: 25) {
-                HStack(spacing: 20) {
-                    Button {
-                        appInfo = true
-                    } label: {
-                        Image(systemName: "info.circle")
+            VStack(spacing: 40) {
+                Button {
+                    appInfo = true
+                } label: {
+                    Text("About App")
+                }.alert(vm.appInfoText, isPresented: $appInfo) {}
+                Button {
+                    requestReview()
+                } label: {
+                    Text("Review App")
+                }
+                Button {
+                    authBtn = true
+                } label: {
+                    Text("Lock / Unlock")
+                }.alert("Authentication", isPresented: $authBtn) {
+                    Button("Lock", role: .cancel) {
+                        if !vm.usingAuth {
+                            vm.authenticationToggle()
+                            vm.isUnlocked = true
+                            print(vm.usingAuth)
+                        }
                     }
-                    .alert(appInfoText, isPresented: $appInfo) {}
-                    Button {
-                        requestReview()
-                    } label: {
-                        Image(systemName: "star")
-                    }
-                    Button {
-                        useAuthentication()
-                    } label: {
-                        usingAuth ? Image(systemName: "lock") : Image(systemName: "lock.open")
+                    Button("UnLock", role: .destructive) {
+                        if vm.usingAuth {
+                            vm.authenticationToggle()
+                            print(vm.usingAuth)
+                        }
+                        
                     }
                 }
-                .foregroundColor(.primary)
-                Spacer()
+
                 Button(role: .destructive) {
                     resetCheck = true
                 } label: {
-                    Image(systemName: "trash")
-                }
+                    Text("Reset All Wishes")
+                }.foregroundColor(.red)
                 .alert("Reset All Wishes?", isPresented: $resetCheck) {
                     Button(role: .destructive) {
                         vm.resetWish()
+                        vm.isSettingPresented = false
                     } label: {
                         Text("Reset")
                     }
                 }
+                
             }
-            .font(.system(size: 18))
+            .font(.custom("NewYork-SemiBold", size: 18))
+            .foregroundColor(.primary)
+            Spacer()
         }
-        .onAppear {
-            print(usingAuth)
-            print(UserDefaults.standard.bool(forKey: "useAuthentication"))
-        }
-        .padding()
-    }
-    
-    func useAuthentication() {
-        if usingAuth == false {
-            UserDefaults.standard.set(true, forKey: "useAuthentication")
-            usingAuth = true
-        } else if usingAuth == true {
-            UserDefaults.standard.set(false, forKey: "useAuthentication")
-            usingAuth = false
-        }
+        .padding(.vertical, 40)
+        .padding(.horizontal, 30)
+        
     }
 }
 
