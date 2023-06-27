@@ -8,10 +8,20 @@ struct WishAddView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            Text("What's your Wish?")
-                .font(.custom("NewYork-SemiBoldItalic", size: 30))
-                .padding(.top, 20)
-                .padding(.bottom, 15)
+            HStack {
+                Spacer()
+                Text("What's your Wish?")
+                    .font(.custom("NewYork-SemiBoldItalic", size: 30))
+                Spacer()
+                Button(action: {
+                    vm.addWish()
+                    vm.isAddPresented = false
+                }, label: {
+                    Image(systemName: "checkmark")
+                })
+                .font(.system(size: 20))
+            }
+            .padding(.vertical)
             Rectangle()
                 .foregroundStyle(.primary)
                 .frame(height: 1)
@@ -24,7 +34,7 @@ struct WishAddView: View {
             
             HStack {
                 Text(">>")
-                    .padding(5)
+                    .padding(6)
                 TextField("Title", text: $vm.newWish.title)
                     .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
                     .focused($wishFocused)
@@ -33,7 +43,7 @@ struct WishAddView: View {
                         vm.isAddPresented = false
                     }
             }
-            .padding(.bottom, 30)
+            .padding(.bottom, 10)
             HStack {
                 Text("Description")
                 .font(.custom("NewYork-SemiBold", size: 22))
@@ -42,7 +52,7 @@ struct WishAddView: View {
             HStack {
                 VStack {
                     Text(">")
-                        .padding(5)
+                        .padding(6)
                     Spacer()
                 }
                 TextEditor(text: $vm.newWish.description)
@@ -59,16 +69,6 @@ struct WishAddView: View {
         }
         .onDisappear() {
             vm.resetNewWish()
-        }
-        .toolbar {
-            ToolbarItem(placement: .navigationBarLeading) {
-                Button {
-                    vm.isAddPresented = false
-                } label: {
-                    Text("Cancel")
-                }
-
-            }
         }
     }
 }

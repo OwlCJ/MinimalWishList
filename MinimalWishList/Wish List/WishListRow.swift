@@ -27,8 +27,8 @@ struct WishListRow: View {
 //            }
             Text("D\(remainDays(endDate: wish.endDate))")
                 .font(.system(.caption))
-            Toggle(isOn: $wish.isDone) {}
-            .toggleStyle(WishCheckBox())
+//            Toggle(isOn: $wish.isDone) {}
+//            .toggleStyle(WishCheckBox())
         }
         .font(.custom("NanumSquareNeoTTF-cBd", size: 16))
         .frame(height: 50)

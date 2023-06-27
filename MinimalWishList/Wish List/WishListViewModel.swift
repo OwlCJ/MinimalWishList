@@ -36,12 +36,10 @@ final class WishListViewModel: ObservableObject {
         self.list.append(newWish)
     }
     
-    func editWish(wish: Wish) {
-        guard let index = self.list.firstIndex(where: { $0.id == wish.id }) else { return }
-        self.list[index].image = wish.image
-        self.list[index].title = wish.title
-        self.list[index].endDate = wish.endDate
-        self.storage.persist(list)
+    func editWish() {
+        guard !newWish.title.isEmpty else { return }
+        guard let index = self.list.firstIndex(where: { $0.id == newWish.id }) else { return }
+        self.list[index] = newWish
     }
     
     func deleteWish(at offsets: IndexSet) {
