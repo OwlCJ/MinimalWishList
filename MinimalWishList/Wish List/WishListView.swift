@@ -61,10 +61,10 @@ struct WishLists: View {
                 } label: {
                     Image(systemName: "plus")
                 }
+                
             }
-            
         }
-        .foregroundColor(.primary)
+        .foregroundStyle(.primary)
         .listStyle(.inset)
         .sheet(isPresented: $vm.isAddPresented) {
             WishAddView(vm: vm)

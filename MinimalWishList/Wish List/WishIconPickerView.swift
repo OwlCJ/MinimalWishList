@@ -31,7 +31,7 @@ struct WishIconPickerView: View {
                 } label: {
                     Image(systemName: icon.imageName)
                 }
-                .foregroundColor( vm.newWish.image == icon ? .primary : .secondary)
+                .foregroundStyle( vm.newWish.image == icon ? .primary : .secondary)
             }
         }
         .font(.system(size: 20))

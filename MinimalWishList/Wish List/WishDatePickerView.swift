@@ -19,7 +19,7 @@ struct WishDatePickerView: View {
             )
         }
         .padding(10)
-        .foregroundColor(.primary)
+        .foregroundStyle(.primary)
     }
 }
 

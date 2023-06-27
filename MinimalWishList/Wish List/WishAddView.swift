@@ -13,7 +13,7 @@ struct WishAddView: View {
                 .padding(.top, 20)
                 .padding(.bottom, 15)
             Rectangle()
-                .foregroundColor(.primary)
+                .foregroundStyle(.primary)
                 .frame(height: 1)
                 .padding(.bottom, 20)
             HStack {

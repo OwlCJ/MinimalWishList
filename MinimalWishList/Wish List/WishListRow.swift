@@ -18,7 +18,7 @@ struct WishListRow: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text(dateFormatter.string(from: wish.endDate))
                         .font(.system(.caption))
-                        .foregroundColor(.secondary)
+                        .foregroundStyle(.secondary)
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }

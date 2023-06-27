@@ -11,7 +11,7 @@ struct WishEditView: View {
             Text("Edit your Wish?")
                 .font(.custom("NewYork-SemiBoldItalic", size: 30))
             Rectangle()
-                .foregroundColor(.primary)
+                .foregroundStyle(.primary)
                 .frame(height: 1)
                 .padding(.bottom, 20)
             HStack {
