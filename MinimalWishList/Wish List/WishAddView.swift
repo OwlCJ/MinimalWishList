@@ -4,6 +4,7 @@ import SwiftUI
 struct WishAddView: View {
     @StateObject var vm: WishListViewModel
     @FocusState private var wishFocused: Bool
+    @State var isEdit = false
     
     var body: some View {
         VStack(spacing: 10) {
@@ -12,16 +13,40 @@ struct WishAddView: View {
             Rectangle()
                 .foregroundColor(.primary)
                 .frame(height: 1)
+                .padding(.top, 15)
                 .padding(.bottom, 20)
             HStack {
-                Text(">")
-                TextField("Write your Wish Here", text: $vm.newWishText)
-                    .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
+                Text("Title")
+                .font(.custom("NewYork-SemiBold", size: 24))
+                Spacer()
+            }
+            
+            HStack {
+                Text(">>")
+                    .padding(5)
+                TextField("Title", text: $vm.newWish.title)
+                    .font(.custom("NanumSquareNeoTTF-cBd", size: 20))
                     .focused($wishFocused)
                     .onSubmit {
                         vm.addWish()
                         vm.isAddPresented = false
                     }
+            }
+            .padding(.bottom)
+            HStack {
+                Text("Description")
+                .font(.custom("NewYork-SemiBold", size: 22))
+                Spacer()
+            }
+            HStack {
+                VStack {
+                    Text(">")
+                        .padding(5)
+                    Spacer()
+                }
+                TextEditor(text: $vm.newWish.description)
+                    .lineSpacing(10)
+                    .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
             }
             Spacer()
             WishDatePickerView(vm: vm)
@@ -32,9 +57,17 @@ struct WishAddView: View {
             wishFocused = true
         }
         .onDisappear() {
-            vm.newWishText = ""
-            vm.newWishImage = .etc
-            vm.newWishEndDate = Date()
+            vm.resetNewWish()
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    vm.isAddPresented = false
+                } label: {
+                    Text("Cancel")
+                }
+
+            }
         }
     }
 }

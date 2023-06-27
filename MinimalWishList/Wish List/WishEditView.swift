@@ -16,7 +16,7 @@ struct WishEditView: View {
                 .padding(.bottom, 20)
             HStack {
                 Text(">")
-                TextField("Write your Wish Here", text: $vm.newWishText)
+                TextField("Write your Wish Here", text: $vm.newWish.title)
                     .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
                     .focused($wishFocused)
                     .onSubmit {
@@ -31,13 +31,12 @@ struct WishEditView: View {
         .padding()
         .onAppear {
             wishFocused = true
-            vm.newWishImage = wish.image
-            vm.newWishText = wish.text
-            vm.newWishEndDate = wish.endDate
+//            vm.newWishImage = wish.image
+//            vm.newWishTitle = wish.title
+//            vm.newWishEndDate = wish.endDate
         }
         .onDisappear() {
-            vm.newWishText = ""
-            vm.newWishImage = .etc
+            vm.resetNewWish()
         }
     }
 }

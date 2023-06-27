@@ -3,6 +3,7 @@ import SwiftUI
 
 struct WishListView: View {
     @StateObject var vm: WishListViewModel
+    @State var addViewDetents:PresentationDetent = .medium
     
     var body: some View {
         NavigationView {
@@ -39,7 +40,11 @@ struct WishLists: View {
         List {
             ForEach(vm.list) { wish in
                 let index = vm.list.firstIndex(where: { $0.id == wish.id })!
-                WishListRow(wish: $vm.list[index], vm: vm)
+                NavigationLink {
+                    WishEditView(wish: $vm.list[index], vm: vm)
+                } label: {
+                    WishListRow(wish: $vm.list[index], vm: vm)
+                }
             }
             .onDelete(perform: vm.deleteWish)
             .onMove(perform: vm.moveWish)
@@ -59,12 +64,10 @@ struct WishLists: View {
             }
             
         }
-        
         .foregroundColor(.primary)
         .listStyle(.inset)
         .sheet(isPresented: $vm.isAddPresented) {
             WishAddView(vm: vm)
-                .presentationDetents([.height(350)])
         }
     }
 }

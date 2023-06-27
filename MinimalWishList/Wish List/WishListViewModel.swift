@@ -7,9 +7,7 @@ final class WishListViewModel: ObservableObject {
     let storage: WishListStorage
     
     @Published var list: [Wish] = []
-    @Published var newWishText: String = ""
-    @Published var newWishImage: WishImage = .etc
-    @Published var newWishEndDate: Date = Date()
+    @Published var newWish: Wish = Wish(image: .etc, title: "", description: "", startDate: Date(), endDate: Date(), isDone: false)
 
     @Published var isAddPresented: Bool = false
     @Published var isEditPresented: Bool = false
@@ -34,15 +32,14 @@ final class WishListViewModel: ObservableObject {
     
     //For Editing
     func addWish() {
-        guard !newWishText.isEmpty else { return }
-        let newWish = Wish(image: newWishImage, text: newWishText, startDate: Date(), endDate: newWishEndDate, isDone: false)
+        guard !newWish.title.isEmpty else { return }
         self.list.append(newWish)
     }
     
     func editWish(wish: Wish) {
         guard let index = self.list.firstIndex(where: { $0.id == wish.id }) else { return }
         self.list[index].image = wish.image
-        self.list[index].text = wish.text
+        self.list[index].title = wish.title
         self.list[index].endDate = wish.endDate
         self.storage.persist(list)
     }
@@ -53,6 +50,10 @@ final class WishListViewModel: ObservableObject {
     
     func moveWish(from source: IndexSet, to destination: Int) {
         self.list.move(fromOffsets: source, toOffset: destination)
+    }
+    
+    func resetNewWish() {
+        self.newWish = Wish(image: .etc, title: "", description: "", startDate: Date(), endDate: Date(), isDone: false)
     }
     
     func resetWish() {

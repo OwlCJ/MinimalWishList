@@ -14,7 +14,7 @@ struct WishListRow: View {
                     .frame(width: 20, height: 20)
                 .padding(.trailing, 10)
                 VStack {
-                    Text(wish.text).strikethrough(wish.isDone)
+                    Text(wish.title).strikethrough(wish.isDone)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     Text(dateFormatter.string(from: wish.endDate))
                         .font(.system(.caption))
@@ -22,9 +22,9 @@ struct WishListRow: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
-            .onTapGesture {
-                vm.isEditPresented = true
-            }
+//            .onTapGesture {
+//                vm.isEditPresented = true
+//            }
             Text("D\(remainDays(endDate: wish.endDate))")
                 .font(.system(.caption))
             Toggle(isOn: $wish.isDone) {}
@@ -32,10 +32,10 @@ struct WishListRow: View {
         }
         .font(.custom("NanumSquareNeoTTF-cBd", size: 16))
         .frame(height: 50)
-        .sheet(isPresented: $vm.isEditPresented) {
-            WishEditView(wish: $wish, vm: vm)
-                .presentationDetents([.height(350)])
-        }
+//        .sheet(isPresented: $vm.isEditPresented) {
+//            WishEditView(wish: $wish, vm: vm)
+//                .presentationDetents([.height(350)])
+//        }
     }
     
     func remainDays(endDate: Date) -> String {

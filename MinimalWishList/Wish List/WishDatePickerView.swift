@@ -14,7 +14,7 @@ struct WishDatePickerView: View {
             Spacer()
             DatePicker(
                 "End Date",
-                selection: $vm.newWishEndDate,
+                selection: $vm.newWish.endDate,
                 displayedComponents: [.date]
             )
         }

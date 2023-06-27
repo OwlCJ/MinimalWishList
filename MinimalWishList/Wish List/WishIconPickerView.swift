@@ -19,19 +19,19 @@ struct WishIconPickerView: View {
         LazyVGrid(columns: layout, spacing: 20) {
             ForEach(icons[0..<6], id: \.self) { icon in
                 Button {
-                    vm.newWishImage = icon
+                    vm.newWish.image = icon
                 } label: {
                     Image(systemName: icon.imageName)
                 }
-                .foregroundColor( vm.newWishImage == icon ? .primary : .secondary)
+                .foregroundColor( vm.newWish.image == icon ? .primary : .secondary)
             }
             ForEach(icons[6...], id: \.self) { icon in
                 Button {
-                    vm.newWishImage = icon
+                    vm.newWish.image = icon
                 } label: {
                     Image(systemName: icon.imageName)
                 }
-                .foregroundColor( vm.newWishImage == icon ? .primary : .secondary)
+                .foregroundColor( vm.newWish.image == icon ? .primary : .secondary)
             }
         }
         .font(.system(size: 20))
