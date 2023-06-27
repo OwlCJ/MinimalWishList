@@ -10,14 +10,15 @@ struct WishAddView: View {
         VStack(spacing: 10) {
             Text("What's your Wish?")
                 .font(.custom("NewYork-SemiBoldItalic", size: 30))
+                .padding(.top, 20)
+                .padding(.bottom, 15)
             Rectangle()
                 .foregroundColor(.primary)
                 .frame(height: 1)
-                .padding(.top, 15)
                 .padding(.bottom, 20)
             HStack {
                 Text("Title")
-                .font(.custom("NewYork-SemiBold", size: 24))
+                .font(.custom("NewYork-SemiBold", size: 25))
                 Spacer()
             }
             
@@ -25,14 +26,14 @@ struct WishAddView: View {
                 Text(">>")
                     .padding(5)
                 TextField("Title", text: $vm.newWish.title)
-                    .font(.custom("NanumSquareNeoTTF-cBd", size: 20))
+                    .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
                     .focused($wishFocused)
                     .onSubmit {
                         vm.addWish()
                         vm.isAddPresented = false
                     }
             }
-            .padding(.bottom)
+            .padding(.bottom, 30)
             HStack {
                 Text("Description")
                 .font(.custom("NewYork-SemiBold", size: 22))
