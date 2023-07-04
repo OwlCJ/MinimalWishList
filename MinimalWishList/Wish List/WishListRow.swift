@@ -22,20 +22,11 @@ struct WishListRow: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
-//            .onTapGesture {
-//                vm.isEditPresented = true
-//            }
             Text("D\(remainDays(endDate: wish.endDate))")
                 .font(.system(.caption))
-//            Toggle(isOn: $wish.isDone) {}
-//            .toggleStyle(WishCheckBox())
         }
         .font(.custom("NanumSquareNeoTTF-cBd", size: 16))
         .frame(height: 50)
-//        .sheet(isPresented: $vm.isEditPresented) {
-//            WishEditView(wish: $wish, vm: vm)
-//                .presentationDetents([.height(350)])
-//        }
     }
     
     func remainDays(endDate: Date) -> String {

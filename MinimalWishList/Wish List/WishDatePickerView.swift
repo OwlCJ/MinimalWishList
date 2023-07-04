@@ -18,7 +18,7 @@ struct WishDatePickerView: View {
                 displayedComponents: [.date]
             )
         }
-        .padding(10)
+        .padding(5)
         .foregroundStyle(.primary)
     }
 }

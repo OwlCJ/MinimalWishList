@@ -12,12 +12,7 @@ struct SettingsView: View {
     @State var authBtn: Bool = false
     
     var body: some View {
-        VStack() {
-            HStack {
-                Text("Settings")
-                    .font(.custom("NewYork-SemiBoldItalic", size: 45))
-                Spacer()
-            }.padding(.bottom, 50)
+        VStack {
             Spacer()
             VStack(spacing: 40) {
                 Button {
@@ -39,13 +34,11 @@ struct SettingsView: View {
                         if !vm.usingAuth {
                             vm.authenticationToggle()
                             vm.isUnlocked = true
-                            print(vm.usingAuth)
                         }
                     }
                     Button("UnLock", role: .destructive) {
                         if vm.usingAuth {
                             vm.authenticationToggle()
-                            print(vm.usingAuth)
                         }
                         
                     }

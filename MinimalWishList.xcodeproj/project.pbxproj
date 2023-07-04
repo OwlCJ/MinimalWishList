@@ -29,6 +29,7 @@
 		71CD97BC2A02CFD10057AC42 /* WishImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD97BB2A02CFD10057AC42 /* WishImage.swift */; };
 		71CD97C22A0335BF0057AC42 /* WishIconPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CD97C12A0335BF0057AC42 /* WishIconPickerView.swift */; };
 		71DBD3552A08A14B005B8122 /* WishEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71DBD3542A08A14B005B8122 /* WishEditView.swift */; };
+		71FCB2302A4CA9AB00C48CAD /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FCB22F2A4CA9AB00C48CAD /* MainPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		71CD97BB2A02CFD10057AC42 /* WishImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishImage.swift; sourceTree = "<group>"; };
 		71CD97C12A0335BF0057AC42 /* WishIconPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishIconPickerView.swift; sourceTree = "<group>"; };
 		71DBD3542A08A14B005B8122 /* WishEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishEditView.swift; sourceTree = "<group>"; };
+		71FCB22F2A4CA9AB00C48CAD /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				71C679232A00C8B8003BFD00 /* Info.plist */,
 				71A5976B29F85FE1000374AD /* MinimalWishListApp.swift */,
 				713368D22A07761E00638572 /* LaunchScreenView.swift */,
+				71FCB22E2A4CA8DA00C48CAD /* Main */,
 				71CD97B62A0228000057AC42 /* Wish List */,
 				71864F482A06669300DDCB88 /* Settings */,
 				71A5979929F870E3000374AD /* Model */,
@@ -214,6 +217,14 @@
 			path = "Wish List";
 			sourceTree = "<group>";
 		};
+		71FCB22E2A4CA8DA00C48CAD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				71FCB22F2A4CA9AB00C48CAD /* MainPageView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -278,7 +289,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					71A5976729F85FE1000374AD = {
 						CreatedOnToolsVersion = 14.3;
@@ -349,6 +360,7 @@
 			files = (
 				71CD97BC2A02CFD10057AC42 /* WishImage.swift in Sources */,
 				71A5979829F86E35000374AD /* WishListView.swift in Sources */,
+				71FCB2302A4CA9AB00C48CAD /* MainPageView.swift in Sources */,
 				71A5979629F86AAC000374AD /* Wish.swift in Sources */,
 				71A5979B29F8712E000374AD /* WishListRow.swift in Sources */,
 				71864F452A0457C100DDCB88 /* WishDatePickerView.swift in Sources */,
@@ -433,6 +445,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -493,6 +506,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

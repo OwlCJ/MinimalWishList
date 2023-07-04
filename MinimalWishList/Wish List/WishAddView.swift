@@ -7,35 +7,41 @@ struct WishAddView: View {
     @State var isEdit = false
     
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 5) {
             HStack {
-                Spacer()
-                Text("What's your Wish?")
-                    .font(.custom("NewYork-SemiBoldItalic", size: 30))
-                Spacer()
-                Button(action: {
-                    vm.addWish()
-                    vm.isAddPresented = false
-                }, label: {
-                    Image(systemName: "checkmark")
-                })
-                .font(.system(size: 20))
+                ZStack {
+                    Spacer()
+                    Text("What's your Wish?")
+                        .font(.custom("NewYork-SemiBoldItalic", size: 30))
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        Button(action: {
+                            vm.addWish()
+                            vm.isAddPresented = false
+                        }, label: {
+                            Image(systemName: "square.and.pencil")
+                        })
+                        .font(.system(size: 20))
+                        .foregroundStyle(.primary)
+                        .padding(.trailing, 5)
+                    }
+                }
             }
             .padding(.vertical)
             Rectangle()
                 .foregroundStyle(.primary)
                 .frame(height: 1)
-                .padding(.bottom, 20)
+                .padding(.bottom, 15)
             HStack {
                 Text("Title")
-                .font(.custom("NewYork-SemiBold", size: 25))
+                .font(.custom("NewYork-SemiBold", size: 22))
                 Spacer()
             }
-            
             HStack {
-                Text(">>")
-                    .padding(6)
-                TextField("Title", text: $vm.newWish.title)
+                Text(">")
+                    .padding(5)
+                TextField("Write down your wish Here : )", text: $vm.newWish.title)
                     .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
                     .focused($wishFocused)
                     .onSubmit {
@@ -43,20 +49,21 @@ struct WishAddView: View {
                         vm.isAddPresented = false
                     }
             }
-            .padding(.bottom, 10)
+            Spacer()
             HStack {
                 Text("Description")
-                .font(.custom("NewYork-SemiBold", size: 22))
+                .font(.custom("NewYork-SemiBold", size: 20))
                 Spacer()
             }
             HStack {
                 VStack {
                     Text(">")
-                        .padding(6)
+                        .padding(.vertical, 5)
+                        .padding(.leading, 4)
                     Spacer()
                 }
                 TextEditor(text: $vm.newWish.description)
-                    .lineSpacing(10)
+                    .lineSpacing(5)
                     .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
             }
             Spacer()

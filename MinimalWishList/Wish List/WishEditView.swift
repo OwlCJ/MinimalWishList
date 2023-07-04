@@ -12,34 +12,35 @@ struct WishEditView: View {
         VStack(spacing: 10) {
             HStack {
                 Text("Title")
-                .font(.custom("NewYork-SemiBold", size: 25))
+                .font(.custom("NewYork-SemiBold", size: 22))
                 Spacer()
             }
-            
             HStack {
-                Text(">>")
+                Text(">")
                     .padding(5)
-                TextField("Title", text: $vm.newWish.title)
+                TextField("Write down your wish Here : )", text: $vm.newWish.title)
                     .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
                     .focused($wishFocused)
                     .onSubmit {
+                        vm.editWish()
                         self.presentationMode.wrappedValue.dismiss()
                     }
             }
-            .padding(.bottom, 30)
+            Spacer()
             HStack {
                 Text("Description")
-                .font(.custom("NewYork-SemiBold", size: 22))
+                .font(.custom("NewYork-SemiBold", size: 20))
                 Spacer()
             }
             HStack {
                 VStack {
                     Text(">")
-                        .padding(5)
+                        .padding(.vertical, 5)
+                        .padding(.leading, 4)
                     Spacer()
                 }
                 TextEditor(text: $vm.newWish.description)
-                    .lineSpacing(10)
+                    .lineSpacing(5)
                     .font(.custom("NanumSquareNeoTTF-cBd", size: 18))
             }
             Spacer()
@@ -47,15 +48,15 @@ struct WishEditView: View {
             WishIconPickerView(vm: vm)
         }
         .navigationTitle("Edit Wish")
-        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem {
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
                     vm.editWish()
                 }, label: {
-                    Image(systemName: "checkmark")
+                    Image(systemName: "square.and.pencil")
                 })
+                .foregroundStyle(.primary)
             }
         }
         .padding()

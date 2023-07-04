@@ -9,7 +9,7 @@ struct LaunchScreenView: View {
     
     var body: some View {
         if isDone && (!vm.usingAuth || vm.isUnlocked) {
-            WishListView(vm: vm)
+            MainPageView(vm: vm)
         } else {
             Section {
                 VStack {

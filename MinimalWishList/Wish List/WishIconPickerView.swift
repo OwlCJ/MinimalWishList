@@ -16,7 +16,7 @@ struct WishIconPickerView: View {
     ]
     
     var body: some View {
-        LazyVGrid(columns: layout, spacing: 20) {
+        LazyVGrid(columns: layout, spacing: 15) {
             ForEach(icons[0..<6], id: \.self) { icon in
                 Button {
                     vm.newWish.image = icon
@@ -34,7 +34,7 @@ struct WishIconPickerView: View {
                 .foregroundStyle( vm.newWish.image == icon ? .primary : .secondary)
             }
         }
-        .font(.system(size: 20))
+        .font(.system(size: 18))
     }
 }
 
