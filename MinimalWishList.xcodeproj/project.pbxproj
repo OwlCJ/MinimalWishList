@@ -70,7 +70,7 @@
 		71C6791C2A0056D0003BFD00 /* WishListStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListStorage.swift; sourceTree = "<group>"; };
 		71C6791F2A00C3A1003BFD00 /* NewYork.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NewYork.ttf; path = ../../../../../../Library/Fonts/NewYork.ttf; sourceTree = "<group>"; };
 		71C679202A00C3A1003BFD00 /* NewYorkItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = NewYorkItalic.ttf; path = ../../../../../../Library/Fonts/NewYorkItalic.ttf; sourceTree = "<group>"; };
-		71C679232A00C8B8003BFD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		71C679232A00C8B8003BFD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71C6792B2A015F7F003BFD00 /* NanumSquareNeo-cBd.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "NanumSquareNeo-cBd.ttf"; path = "../../../../Library/Fonts/NanumSquareNeo-cBd.ttf"; sourceTree = "<group>"; };
 		71CD97B92A0229BA0057AC42 /* WishAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishAddView.swift; sourceTree = "<group>"; };
 		71CD97BB2A02CFD10057AC42 /* WishImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishImage.swift; sourceTree = "<group>"; };
