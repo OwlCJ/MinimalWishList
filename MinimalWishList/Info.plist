@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSFaceIDUsageDescription</key>
-	<string>&quot;To protect users wishes&quot;</string>
+	<string>&quot;We need your consent to save your wishes&quot;</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NewYork.ttf</string>

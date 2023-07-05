@@ -29,7 +29,7 @@ struct SettingsView: View {
                     authBtn = true
                 } label: {
                     Text("Lock / Unlock")
-                }.alert("Authentication", isPresented: $authBtn) {
+                }.alert("Use FaceId Or Password ?", isPresented: $authBtn) {
                     Button("Lock", role: .cancel) {
                         if !vm.usingAuth {
                             vm.authenticationToggle()
