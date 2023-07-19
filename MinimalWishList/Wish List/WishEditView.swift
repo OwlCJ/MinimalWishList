@@ -10,11 +10,11 @@ struct WishEditView: View {
     
     var body: some View {
         VStack(spacing: 10) {
-            HStack {
-                Text("Title")
-                .font(.custom("NewYork-SemiBold", size: 22))
-                Spacer()
-            }
+//            HStack {
+//                Text("Title")
+//                .font(.custom("NewYork-SemiBold", size: 22))
+//                Spacer()
+//            }
             HStack {
                 Text(">")
                     .padding(5)
@@ -28,7 +28,7 @@ struct WishEditView: View {
             }
             Spacer()
             HStack {
-                Text("Description")
+                Text("Details..")
                 .font(.custom("NewYork-SemiBold", size: 20))
                 Spacer()
             }
