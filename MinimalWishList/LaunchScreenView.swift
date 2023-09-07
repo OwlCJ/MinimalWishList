@@ -7,7 +7,7 @@ struct LaunchScreenView: View {
     @State private var isDone = false
     @State private var opacity = 0.5
     
-    var body: some View {
+    var body: some View { 
         if isDone && (!vm.usingAuth || vm.isUnlocked) {
             MainPageView(vm: vm)
         } else {

@@ -18,7 +18,7 @@ final class WishListViewModel: ObservableObject {
     
     var subscriptions = Set<AnyCancellable>()
     
-    
+    //App's Info
     let appInfoText: String = """
     Minimal Wish List v1.0
     

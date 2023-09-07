@@ -20,6 +20,7 @@ public class Storage {
         }
     }
     
+    // 해당 파일이 존재할 시 지운 후 새로 생성
     static func store<T: Encodable>(_ obj: T, to directory: Directory, as fileName: String) {
         let url = directory.url.appendingPathComponent(fileName, isDirectory: false)
         let encoder = JSONEncoder()
@@ -35,6 +36,7 @@ public class Storage {
             print("----> Failed to store msg: \(error.localizedDescription)")
         }
     }
+    
     
     static func retrive<T: Decodable>(_ fileName: String, from directory: Directory, as type: T.Type) -> T? {
         let url = directory.url.appendingPathComponent(fileName, isDirectory: false)
