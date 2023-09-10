@@ -33,11 +33,6 @@ struct WishAddView: View {
                 .foregroundStyle(.primary)
                 .frame(height: 1)
                 .padding(.bottom, 15)
-//            HStack {
-//                Text("Title")
-//                .font(.custom("NewYork-SemiBold", size: 22))
-//                Spacer()
-//            }
             HStack {
                 Text(">")
                     .padding(5)
