@@ -59,6 +59,7 @@ final class WishListViewModel: ObservableObject {
         self.storage.persist(list)
     }
     
+    //Data Binding
     private func bind() {
         $list.sink { items in
             self.persist(items: items)
