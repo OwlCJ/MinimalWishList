@@ -2,7 +2,6 @@
 import SwiftUI
 import StoreKit
 
-
 struct SettingsView: View {
     @StateObject var vm: WishListViewModel
     @Environment(\.requestReview) private var requestReview
